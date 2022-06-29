@@ -261,3 +261,34 @@ body {
   }
 
 
+.energy {
+	transform: translateX(500px) translateY(100px);
+}
+
+.energy span {
+	position: absolute;
+	width: calc(50px + var(--i));
+	height: calc(50px + var(--i));
+	background: var(--clr);
+	border-radius: 50%;
+	transform-origin: calc(100px + var(--i));
+	animation: animate 5s linear infinite;
+	animation-duration: calc(var(--d));
+	mix-blend-mode: plus-lighter;
+	filter: blur(30px);
+
+}
+
+.energy span:nth-child(even) {
+	animation-direction: reverse;
+}
+
+@keyframes animate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
